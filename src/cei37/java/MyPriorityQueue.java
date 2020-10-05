@@ -9,7 +9,7 @@ public class MyPriorityQueue {
 
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
-		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(/*new Comparator<Integer>() {
+		Comparator com = new Comparator<Integer>() {
 
 			@Override
 			public int compare(Integer o1, Integer o2) {
@@ -17,7 +17,9 @@ public class MyPriorityQueue {
 				return o1 > o2 ? -1 : 1;
 			}
 			
-		}*/);
+		};
+		
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 		pq.add(10);
 		pq.add(5);
 		pq.add(4);

@@ -38,13 +38,7 @@ public class ValidParenthesisString {
 	}
 
 	public boolean checkValidString(String s) {
-    	int left = 0;
-    	int right = 0;
-    	char a[] = s.toCharArray();
-    	
-    	for (int i=0; i<a.length; i++) {
-
-    	}
+		
 
     	return false;
     }

@@ -1,4 +1,4 @@
-package cei37.auyomata;
+package cei37.automata;
 
 import java.util.HashSet;
 import java.util.Set;

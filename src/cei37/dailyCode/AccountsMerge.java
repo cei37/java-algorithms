@@ -4,15 +4,7 @@ import java.util.*;
 /**
  * 
 721. Accounts Merge
-Medium
 
-1183
-
-270
-
-Add to List
-
-Share
 Given a list accounts, each element accounts[i] is a list of strings, 
 where the first element accounts[i][0] is a name, and the rest of the 
 elements are emails representing emails of the account.
@@ -45,7 +37,7 @@ public class AccountsMerge {
 	public static void main(String[] args) {
 		List<List<String>> accounts = new ArrayList<>();
 		
-		/*
+
 		List<String> a1 = new ArrayList<String>();
 		a1.add("John");
 		a1.add("johnsmith@mail.com");
@@ -66,10 +58,10 @@ public class AccountsMerge {
 		a1 = new ArrayList<String>();
 		a1.add("Mary");
 		a1.add("mary@mail.com");
-		accounts.add(a1);*/
+		accounts.add(a1);
 		//#####################
 		
-		List<String> a2 = new ArrayList<String>();
+		/*List<String> a2 = new ArrayList<String>();
 		a2.add("Alex");
 		a2.add("Alex5@m.co");
 		a2.add("Alex4@m.co");
@@ -102,44 +94,14 @@ public class AccountsMerge {
 		a2.add("Gabe3@m.co");
 		a2.add("Gabe4@m.co");
 		a2.add("Gabe2@m.co");
-		accounts.add(a2);
+		accounts.add(a2);*/
 		
 		AccountsMerge a = new AccountsMerge();
 		System.out.println(a.accountsMerge(accounts));
 	}
 
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
-        Map<String, TreeSet<String>> hashToList = new HashMap<>();
-        Map<String, String> mailToHash = new HashMap<>();
-        int counter = 0;
-        for (List<String> list : accounts) {
-        	String key = "";
-        	list = new ArrayList(new TreeSet(list));
-            for (int i=0; i<list.size(); i++) {
-                if (i == 0) {
-                	key = list.get(i) + "_" +counter;
-                	hashToList.put(key, new TreeSet(list));
-                	continue;
-                }
-                String str = list.get(i);
-                if (mailToHash.containsKey(str)) {
-                    for (int j=1; j<list.size(); j++) {
-                    	if (!str.equalsIgnoreCase(list.get(j)))
-                    		hashToList.get(mailToHash.get(str)).add(list.get(j));
-                    }
-                    hashToList.remove(key);
-                    break;
-                } else {
-                	mailToHash.put(str, key);
-                }
-            }
-            counter++;
-        }
-
-        List<List<String>> res = new ArrayList<>();
-        for (Map.Entry<String, TreeSet<String>> e: hashToList.entrySet()) {
-        	res.add(new ArrayList(e.getValue()));
-        }
-        return res;
+    	
+        return null;
     }
 }
