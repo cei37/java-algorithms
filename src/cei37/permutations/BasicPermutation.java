@@ -6,26 +6,33 @@ import java.util.List;
 public class BasicPermutation {
 
 	public static void main(String[] args) {
-		for (String str: BasicPermutation.permutation("ABCD")) {
+		for (String str: BasicPermutation.permutation("ABC")) {
 			System.out.println(str);
 		}
 	}
 
 	public static List<String> permutation(String str) {
 		List<String> output = new ArrayList<>();
-		permutation(output, str, 0, str.length());
+		permutation(output, str.toCharArray(), 0);
 		return output;
 	}
 	
-	public static void permutation(List<String> list, String str, int init, int size) {
+	public static void permutation(List<String> list, char[] arr, int pos) {
 		
-		if (size == 0) {
-			list.add(str);
+		if (pos >= arr.length) {
+			list.add(new String(arr));
+			return;
 		}
-		for (int i=0; i<str.length()-1; i++) {
-			String left = str.substring(i);
-			String right = str.substring(i + 1, str.length() -1);
-			permutation(list, right, i+1, right.length());
+		for (int i=pos; i<arr.length; i++) {
+			swap(arr, i, pos);
+			permutation(list, arr, pos + 1);
+			swap(arr, i, pos);
 		}
+	}
+	
+	public static void swap(char arr[], int i, int j) {
+		char tem = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tem;
 	}
 }

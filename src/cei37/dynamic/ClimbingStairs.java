@@ -1,4 +1,4 @@
-package cei37.dailyCode;
+package cei37.dynamic;
 
 /*
  * 70. Climbing Stairs
@@ -37,7 +37,7 @@ public class ClimbingStairs {
 	}
 
     public int climbStairs(int n) {    	
-    	return climbStairs(n, new int[n+1]);
+    	return climbStairs(n, new int[n+2]);
     }
     
     public int climbStairs(int n, int [] memo) {

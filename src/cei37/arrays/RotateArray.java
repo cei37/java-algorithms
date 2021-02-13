@@ -1,7 +1,5 @@
 package cei37.arrays;
 
-import java.util.LinkedList;
-
 public class RotateArray {
 
 	//Given an array, rotate the array to the right by k steps, where k is non-negative.
@@ -25,7 +23,23 @@ public class RotateArray {
 		}
 	}
 	
-    public static void rotateExtraMemory(int[] nums, int k) {
+    public static void rotate(int[] nums, int k) {
+    	k %= nums.length;
+    	rotate(nums, 0, nums.length - 1);
+    	rotate(nums, 0, k - 1);
+    	rotate(nums, k, nums.length - 1);
+    }
+    
+    public static void rotate(int[] nums, int a, int b) {
+    	if(a >= b) return;
+
+    	int tem = nums[a];
+    	nums[a] = nums[b];
+    	nums[b] = tem;
+    	rotate(nums, a + 1, b - 1);
+    }
+
+    public static void rotateBruteForce(int[] nums, int k) {
     	if (k < 0 || nums.length == 1) {
     		return;
     	}
@@ -50,7 +64,7 @@ public class RotateArray {
     }
     
     //this was a copy (nice)
-    public static void rotate(int[] nums, int k) {
+    public static void rotateExtraMemory(int[] nums, int k) {
         int[] a = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             a[(i + k) % nums.length] = nums[i];

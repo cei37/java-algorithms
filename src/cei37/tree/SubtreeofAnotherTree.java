@@ -3,7 +3,7 @@ package cei37.tree;
 public class SubtreeofAnotherTree {
 
 	public static void main(String[] args) {
-		TreeNode s = new TreeNode();
+		TreeNodeOriginal s = new TreeNodeOriginal();
         /* 
 		     3
 		    / \
@@ -17,7 +17,7 @@ public class SubtreeofAnotherTree {
 		s.insert(1);
 		s.insert(2);
 		
-		TreeNode t = new TreeNode();
+		TreeNodeOriginal t = new TreeNodeOriginal();
         /* 
 		     3
 		    / \
@@ -34,7 +34,7 @@ public class SubtreeofAnotherTree {
 		
 	}
 
-    public boolean isSubtree(TreeNode s, TreeNode t) {
+    public boolean isSubtree(TreeNodeOriginal s, TreeNodeOriginal t) {
     	StringBuffer sbS = new StringBuffer();
     	StringBuffer sbT = new StringBuffer();
     	
@@ -44,7 +44,7 @@ public class SubtreeofAnotherTree {
     	return sbS.toString().contains(sbT.toString());
     }
     
-    public void preOrder(TreeNode node, StringBuffer sb) {
+    public void preOrder(TreeNodeOriginal node, StringBuffer sb) {
     	//sb.append("#").append(node.)
     }
 }
